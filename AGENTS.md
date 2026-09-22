@@ -1,6 +1,6 @@
-# homebrew-ai-usage-bar
+# homebrew-kit
 
-[ai-usage-bar](https://github.com/kube-guy/ai-usage-bar) 용 Homebrew tap.
+kube-guy 의 macOS 유틸리티용 Homebrew tap.
 formula 는 `Formula/ai-usage-bar.rb` 하나뿐이고, 본체 저장소의 `scripts/release.sh` 가
 새 릴리스마다 `url` / `sha256` 을 갱신해 커밋한다.
 
@@ -25,7 +25,7 @@ git var GIT_AUTHOR_IDENT   # kube-guy <324278276+kube-guy@users.noreply.github.c
 - **`-c user.email=...` 을 커밋마다 붙이는 방식에 의존하지 않는다.** `git merge`,
   `git rebase`, `git cherry-pick`, `git revert` 는 커밋을 만들면서도 이 지정이 빠지기 쉽다.
 - 푸시 전에 `git log --format='%an <%ae>'` 로 **전체** 커밋의 작성자를 확인한다.
-- `.git/config` 와 `~/.gitconfig` 의 `[includeIf "gitdir:~/homebrew-ai-usage-bar/"]`
+- `.git/config` 와 `~/.gitconfig` 의 `[includeIf "gitdir:~/homebrew-kit/"]`
   양쪽에 같은 신원이 걸려 있다.
 - 공개될 파일에 실명·회사 이메일·개인 이메일을 적지 않는다.
 
