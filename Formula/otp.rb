@@ -1,8 +1,8 @@
 class Otp < Formula
   desc "TOTP code generator that keeps secrets in the macOS Keychain"
   homepage "https://github.com/kube-guy/otp-cli"
-  url "https://github.com/kube-guy/otp-cli/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "b3b42573e99471fa6391a6c566033ca604b41528400bf9c6aa0476b02f5e98df"
+  url "https://github.com/kube-guy/otp-cli/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "6bc3761d4064a4784cec3ac9e85fc8ee9d392f2cc54e55f48663af8a8c0f649c"
   license "MIT"
   head "https://github.com/kube-guy/otp-cli.git", branch: "main"
 
