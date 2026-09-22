@@ -1,8 +1,8 @@
 class Otp < Formula
   desc "TOTP code generator that keeps secrets in the macOS Keychain"
   homepage "https://github.com/kube-guy/otp-cli"
-  url "https://github.com/kube-guy/otp-cli/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "0fd48606de166eb326807f35f9265c4db467b9a76903cdb3bc17effe9ca49324"
+  url "https://github.com/kube-guy/otp-cli/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "b67d1e2f419574bee1073e884abd8333fbb08b20330d7ba832aa529cbb580c6f"
   license "MIT"
   head "https://github.com/kube-guy/otp-cli.git", branch: "main"
 
@@ -15,6 +15,13 @@ class Otp < Formula
     bin.install buildpath/".build/release/otp"
   end
 
+  service do
+    run [opt_bin/"otp", "agent"]
+    keep_alive true
+    log_path var/"log/otp.log"
+    error_log_path var/"log/otp.err.log"
+  end
+
   def caveats
     <<~EOS
       시크릿 등록:
@@ -23,6 +30,14 @@ class Otp < Formula
       TOTP 시크릿은 비밀번호와 동등한 등급입니다. macOS Keychain 의
       login keychain 에 service "otp-cli" 로 저장되며, 처음 읽을 때
       키체인 접근 승인을 한 번 요청할 수 있습니다.
+
+      단축키(기본 ⌘⌥O)로 커서 위치에 코드를 바로 입력하려면:
+        otp default <이름>
+        brew services start otp
+
+      처음 실행하면 손쉬운 사용 권한을 요청합니다. 시스템 설정 →
+      개인정보 보호 및 보안 → 손쉬운 사용 에서 otp 를 허용하세요.
+      brew upgrade 로 경로가 바뀌면 다시 허용해야 할 수 있습니다.
     EOS
   end
 
