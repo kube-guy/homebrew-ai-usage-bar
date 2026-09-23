@@ -1,8 +1,8 @@
 class AiUsageBar < Formula
   desc "Menu bar app showing Claude Code and Codex CLI usage limits"
   homepage "https://github.com/kube-guy/ai-usage-bar"
-  url "https://github.com/kube-guy/ai-usage-bar/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "3ee60fc96a28c4025440e587232e38517fb5a423e5ef88321cb3948e9c1124b9"
+  url "https://github.com/kube-guy/ai-usage-bar/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "96c14cfdd6ee628b930085c700bcb91cf2c0f3da81ffa05f927c0a93c84b371c"
   license "MIT"
   head "https://github.com/kube-guy/ai-usage-bar.git", branch: "main"
 
